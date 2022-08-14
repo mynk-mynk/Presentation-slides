@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<style>
+	h2,
+	h3,
+	p,
+	span.my-span {
+		color: #283747 !important;
+	}
+
+	p {
+		font-size: 3rem;
+	}
+
+	span.my-span {
+		font-size: 2rem;
+	}
+
+	.align-left {
+		text-align: left;
+		margin: 50px 30px !important;
+	}
+	.code {
+		width: fit-content !important;
+		font-size: 0.99rem !important;
+	}
+	.graph-img {
+		display: block;
+		margin: 20px auto !important;
+		width: 500px;
+	}
+</style>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="#ABEBC6">
+				<h2>Databases:</h2>
+				<p>SQL vs NoSQL</p>
+			</section>
+			<section>
+				<section data-background="#ABEBC6">
+					<p>What a database is?</p>
+					<img src="./assets/storage.jpg" alt="Storage picture" width="600">
+				</section>
+				<section data-background="#ABEBC6">
+					<p class="align-left">Wikipedia:</p>
+					<p>"A <b>database</b> is an organized collection of data stored and accessed electronically"</p>
+				</section>
+			</section>
+			<section>
+				<section data-background="#ABEBC6">
+					<p><b>SQL databases:</b></p>
+					<ul>
+						<li class="fragment">Structured Query Language</li>
+						<li class="fragment">Relational</li>
+						<li class="fragment">Predefined structure</li>
+					</ul>
+				</section>
+				<section data-background="#ABEBC6">
+					<img src="./assets/example-sql-1.png" alt="User table">
+					<img class="fragment" src="./assets/example-sql-2.png" alt="Children table">
+				</section>
+				<section data-background="#ABEBC6">
+					<p><b>The most popular SQL databases are:</b></p>
+					<p>MS-SQL, Oracle, SQLite, MySQL, Postgres</p>
+				</section>
+			</section>
+			<section>
+				<section data-background="#ABEBC6">
+					<p><b>NoSQL databases:</b></p>
+					<ul>
+						<li class="fragment">Typically don't use SQL</li>
+						<li class="fragment">Usually don't require formal data schemas</li>
+						<li class="fragment">Usually non-relational</li>
+					</ul>
+				</section>
+				<section data-background="#ABEBC6">
+					<p><b>Types of NoSQL technologies:</b></p>
+					<ul>
+						<li class="fragment">Document databases</li>
+					</ul>
+						<pre class="code fragment"><code>
+Users = [
+	{
+	  "key": 0,
+	  "first_name": "Jack",
+	  "last_name": "Smith",
+	  "age": 32,
+	  "children": [
+					{
+	  					"name": "Lilly",
+	 					 "age": 4
+					},
+					{
+						"name": "Frank",
+						"age": 6
+				  },
+	  			  ]
+	},
+	...
+]
+						</code></pre>
+						<span class="fragment my-span"><b>Examples:</b> CouchDB, MongoDB</span>
+				</section>
+				<section data-background="#ABEBC6">
+					<ul>
+						<li>Key-value databases</li>
+					</ul>
+						<pre class="code fragment"><code>
+	{
+	  "first_name": "Jack",
+	  "last_name": "Smith",
+	  "age": 32,
+	  "children": 2,
+	...
+	}
+						</code></pre>
+						<span class="fragment my-span"><b>Examples:</b> Amazon DynamoDB, Redis</span>
+				</section>
+				<section data-background="#ABEBC6">
+					<ul>
+						<li>Graph databases</li>
+					</ul>
+					<img class="fragment graph-img" src="./assets/graphbd.jpg" alt="Graph BD">
+					<span class="fragment my-span"><b>Examples:</b> Neo4j, Dgraph</span>
+				</section>
+				<section data-background="#ABEBC6">
+					<ul>
+						<li>Column-oriented databases</li>
+					</ul>
+					<img class="fragment graph-img" src="./assets/example-column.png" alt="Column BD">
+					<span class="fragment my-span"><b>Examples:</b> Cassandra, Google BigTable, Apache HBase</span>
+				</section>
+			</section>
+			<section data-background="#ABEBC6">
+				<p><b>Soo... differences</b></p>
+				<img class="fragment" src="./assets/differences.png" alt="differences">
+			</section>
+			<section data-background="#ABEBC6">
+				<p><b>The End.</b></p>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
